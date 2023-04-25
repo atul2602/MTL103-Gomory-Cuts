@@ -18,6 +18,7 @@ def add_gomory(tab, i):
     pass
 
 def dual_simplex_iter(M, tab):
+    m,n = np.shape(tab)
     #Perform dual simplex iteration on tableau tab
     pass
 
