@@ -28,7 +28,7 @@ def dual_simplex_iter(M, tab):
                 minval = -tab[0][k]/tab[j][k] 
                 i = k
     M[j-1] = i #  ------------------ doubt in existence of M? -----------------
-#  i and j are pivot indices
+#  j,i are pivot indices
     tab[j,:] = tab[j,:]/tab[j,i]
     for z in range(m):
         if z!=j:
