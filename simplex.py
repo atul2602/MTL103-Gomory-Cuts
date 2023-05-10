@@ -18,6 +18,24 @@ def add_gomory(tab, i):
     pass
 
 def dual_simplex_iter(M, tab):
+    m,n = np.shape(tab)
+    j = (np.argmin(tab[1:, 0]))+1
+#     if !(chk_dual_opt(tab)):
+    minval = float("inf")
+    for k in range(1,n):
+        if tab[j][k] < 0:
+            if -tab[0][k]/tab[j][k] <= minval : 
+                minval = -tab[0][k]/tab[j][k] 
+                i = k
+    M[j-1] = i #  ------------------ doubt in existence of M? -----------------
+#  j,i are pivot indices
+    tab[j,:] = tab[j,:]/tab[j,i]
+    for z in range(m):
+        if z!=j:
+            tab[z,:] = tab[z,:] - (tab[j,:]*tab[z,i]
+    return M,tab
+    
+    
     #Perform dual simplex iteration on tableau tab
     pass
 
